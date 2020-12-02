@@ -662,6 +662,12 @@ h6 {
 
 .command-icon > .icon {
   display: block;
+
+  background-color: var(--color-white);
+  fill: var(--color-icon-gray);
+
+  transition: background-color var(--time-var) var(--transform-function),
+    fill var(--time-var) var(--transform-function);
 }
 
 .command-icon > .icon:hover {
