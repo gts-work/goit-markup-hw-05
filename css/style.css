@@ -492,6 +492,11 @@ h6 {
 }
 
 .button.filter {
+  min-width: 73px;
+
+  padding: 6px 22px;
+
+  border-radius: 4px;
   background-color: var(--secondary-background-color);
   color: var(--secondary-text-color);
 
@@ -500,9 +505,9 @@ h6 {
   line-height: 1.63;
   letter-spacing: 0.03em;
 
-  min-width: 73px;
-
-  padding: 6px 22px;
+  transition: background-color var(--time-var) var(--transform-function),
+    box-shadow var(--time-var) var(--transform-function),
+    color var(--time-var) var(--transform-function) 50ms;
 }
 
 .button.filter:not(:last-child) {
@@ -514,7 +519,6 @@ h6 {
 .button.filter:focus {
   background-color: var(--active-color);
   box-shadow: 0px 4px 4px var(--color-button);
-  border-radius: 4px;
   color: var(--color-white);
 }
 
@@ -560,6 +564,8 @@ h6 {
 
   width: calc((100% - 60px) / 3);
   height: 404px;
+
+  transition: box-shadow var(--time-var) var(--transform-function);
 
   /* background-color: tomato; */
 }
