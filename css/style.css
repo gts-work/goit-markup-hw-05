@@ -211,6 +211,8 @@ h6 {
   background-color: var(--active-color);
 
   opacity: 1;
+
+  transform: scaleX(1);
 }
 
 .site-nav.contact {
@@ -257,13 +259,16 @@ h6 {
   border-radius: 2px;
   background-color: var(--active-color);
 
-  opacity: 0;
+  transform-origin: 0px 0px;
+  transform: scaleX(0);
 
-  transition: opacity var(--time-var) var(--transform-function);
+  transition: transform var(--time-var) var(--transform-function),
+    transform-origin var(--time-var) var(--transform-function);
 }
 
 .menu .link:hover::after {
-  opacity: 1;
+  transform-origin: 0% 100%;
+  transform: scaleX(1);
 }
 
 /* .icon-envelope:hover,
