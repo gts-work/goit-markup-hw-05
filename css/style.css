@@ -771,13 +771,18 @@ h6 {
   background-color: var(--color-white);
   fill: var(--color-icon-gray);
 
+  transform: scale(1);
+
   transition: background-color var(--time-var) var(--transform-function),
-    fill var(--time-var) var(--transform-function);
+    fill var(--time-var) var(--transform-function),
+    transform var(--time-var) var(--transform-function);
 }
 
 .command-icon > .icon:hover {
   background-color: var(--active-color);
   fill: var(--color-white);
+
+  transform: scale(1.2);
 
   cursor: pointer;
 }
@@ -816,13 +821,18 @@ h6 {
   justify-content: center;
   align-items: center;
 
+  transform: scale(1);
+
   transition: border-color var(--time-var) var(--transform-function),
-    fill var(--time-var) var(--transform-function);
+    fill var(--time-var) var(--transform-function),
+    transform var(--time-var) var(--transform-function);
 }
 
 .clients-item:hover {
   border-color: var(--active-color);
   fill: var(--active-color);
+
+  transform: scale(1.2);
 }
 
 /* Footer */
@@ -912,7 +922,10 @@ h6 {
   background-color: var(--color-secondary-footer-dark-gray);
   fill: var(--color-white);
 
-  transition: background-color var(--time-var) var(--transform-function);
+  transform: scale(1);
+
+  transition: background-color var(--time-var) var(--transform-function),
+    transform var(--time-var) var(--transform-function);
 }
 
 .social-list > .list-item:not(:last-child) {
@@ -921,6 +934,8 @@ h6 {
 
 .social-list .link-item:hover {
   background-color: var(--active-color);
+
+  transform: scale(1.2);
 }
 
 /* MODAL */
