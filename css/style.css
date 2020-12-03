@@ -24,9 +24,11 @@ html {
   --secondary-background-color: #f5f4fa;
   --sub-background-color: #c4c4c4;
   --color-white: #ffffff;
+  --color-black: #000000;
   --color-secondary-grey: rgba(255, 255, 255, 0.6);
   --color-secondary-footer-dark-gray: rgba(255, 255, 255, 0.1);
   --color-button: rgba(0, 0, 0, 0.15);
+  --color-border-close: rgba(0, 0, 0, 0.1);
   --background-footer: #2f303a;
   --border-color: #eeeeee;
   --color-icon-gray: #afb1b8;
@@ -34,6 +36,8 @@ html {
 
   --background-description: rgba(47, 48, 58, 0.8);
   --background-blue-description: rgba(33, 150, 243, 0.9);
+
+  --backdrop: rgba(0, 0, 0, 0.2);
 
   --transform-function: cubic-bezier(0.4, 0, 0.2, 1);
   --time-var: 250ms;
@@ -377,7 +381,12 @@ h6 {
   box-shadow: 0px 4px 4px var(--color-button);
   color: var(--color-white);
 
-  font-weight: 700;
+  outline: 0;
+
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
 }
 
 /* Section */
@@ -914,4 +923,77 @@ h6 {
   background-color: var(--active-color);
 }
 
-/* TEST */
+/* MODAL */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+
+  background-color: var(--backdrop);
+
+  transition: opacity var(--time-var) var(--transform-function);
+}
+
+.modal {
+  position: absolute;
+  top: 221px;
+  left: 50%;
+
+  width: 530px;
+  height: 580px;
+
+  background-color: var(--color-white);
+
+  transform: translateX(-50%) scale(1);
+
+  transition: transform var(--time-var) var(--transform-function);
+}
+
+.close-block {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border-close);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  outline: 0;
+
+  cursor: pointer;
+}
+
+.icon-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 11px;
+  height: 11px;
+
+  fill: var(--color-black);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translateX(-50%) scale(0.5);
+}
+
+/* TEST */ ;
