@@ -33,6 +33,7 @@ html {
   --color41: #ffffff;
 
   --background-description: rgba(47, 48, 58, 0.8);
+  --background-blue-description: rgba(33, 150, 243, 0.9);
 
   --transform-function: cubic-bezier(0.4, 0, 0.2, 1);
   --time-var: 250ms;
@@ -587,11 +588,11 @@ h6 {
   margin-right: 24px;
 }
 
-.portfolio .img-item {
+.portfolio-image {
   margin-bottom: 20px;
 }
 
-.portfolio > .item {
+.portfolio-item {
   border: 1px solid var(--border-color);
 
   width: calc((100% - 60px) / 3);
@@ -602,17 +603,74 @@ h6 {
   /* background-color: tomato; */
 }
 
-.portfolio > .item:not(:nth-child(3n)) {
+.portfolio-item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
 
-.portfolio > .item:not(:nth-last-child(-n + 3)) {
+.portfolio-item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
 
-.portfolio > .item:hover {
+.portfolio-image {
+  position: relative;
+
+  overflow: hidden;
+
+  /* transition: overflow var(--time-var) var(--transform-function); */
+}
+
+.portfolio-card {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 63px 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+
+  transform: translateY(100%);
+
+  transition: transform var(--time-var) var(--transform-function);
+}
+
+.portfolio-image::before {
+  content: "";
+
+  display: inline-block;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--background-blue-description);
+
+  transform: translateY(100%);
+
+  transition: transform var(--time-var) var(--transform-function);
+}
+
+.portfolio-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-item:hover .portfolio-image::before {
+  transform: translateY(0);
+}
+
+.portfolio-item:hover .portfolio-card {
+  transform: translateY(0);
 }
 
 /* Commands */
